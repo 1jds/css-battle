@@ -23,15 +23,14 @@ In order to complete this challenge, it would, of course, be possible to use abs
     div {
         background: #F0CD48;
         place-self: center;
+        grid-area: a;
       }
     #a {
-        grid-area: a;
         border-radius: 50%;
         width: 150px;
         height: 150px;
     }
     .l {
-        grid-area: a;
         width: 40px;
         height: 240px;
         border-radius: 20px  
