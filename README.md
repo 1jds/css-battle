@@ -1,7 +1,7 @@
 # css-battle
 
 
-```html
+```css
 <div id="a"></div>
 <div class="l"></div>
 <div class="l" id="b"></div>
