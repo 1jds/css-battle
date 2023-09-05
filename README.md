@@ -54,6 +54,8 @@ Points of note:
 
 This challenge can be solved using a combination of `linear-gradient`, `box-shadow`, and absolute positioning. The background of course, could be made with flexbox, or grid, or just block-level components. But the linear-gradient solution saves characters. Also, ordering the `<div>` elements in the HTML as they are removes the need to use `z-index` to layer the tree trunk under the leaves. An 'optimised' (but unreadable) version of the same which saves characters is added below.
 
+<img alt="screenshot of my css battle number 121 answer" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-css-battle-121-duck-hunt.png">
+
 Normal: 
 ```html
 <div id="tree"></div>
