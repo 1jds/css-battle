@@ -49,3 +49,39 @@ Points of note:
 </style>
   
   ```
+
+## Challenge No. 121. Duck Hunt
+
+This challenge can be solved using a combination of `linear-gradient`, `box-shadow`, and absolute positioning. The background of course, could be made with flexbox, or grid, or just block-level components. But the linear-gradient solution saves characters. Also, ordering the `<div>` elements in the HTML as they are removes the need to use `z-index` to layer the tree trunk under the leaves. An 'optimised' (but unreadable) version of the same which saves characters is added below.
+
+Normal: 
+```html
+<div id="tree"></div>
+<div id="foliage"></div>
+<style>
+  body {
+    background: linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%);
+  }
+  #foliage {
+    position: absolute;
+    left: 40;
+    top: 60;
+    width: 40px;
+    height: 40px;
+    background: #69D10A;
+    border-radius: 50%;
+    color: #69D10A;
+    box-shadow: 20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px;
+  }
+  #tree {
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    background: #441A0A;
+    height: 100px;
+    width: 20px;
+  }
+</style>
+```
+
+'Character optimised`:
