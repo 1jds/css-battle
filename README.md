@@ -95,6 +95,8 @@ Normal:
 
 This challenge provides an obvious use for CSS grid. It also provides an example of how color declarations should mostly be abstracted to utility classes or CSS custom properties.
 
+<img alt="illustrative screenshot of daily target for 9/9/2023" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-daily-target-for-2023-09-10.png">
+
 ```html
 <div class="a o"></div>
 <div id=b></div>
