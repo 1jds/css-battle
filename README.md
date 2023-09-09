@@ -90,3 +90,40 @@ Normal:
 ```html
 <div id="t"></div><div id="f"><style>body{background:linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%)}#f{position:absolute;left:40;top:60;width:40;height:40;background: #69D10A;border-radius:50%;color:#69D10A;box-shadow:20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px}#t{position:absolute;left:50;top:80;background:#441A0A;height:100;width:20}
 ```
+
+## Daily Target for 9/9/2023
+
+This challenge provides an obvious use for CSS grid. It also provides an example of how color declarations should mostly be abstracted to utility classes or CSS custom properties.
+
+```html
+<div class="a o"></div>
+<div id=b></div>
+<div class="c o"></div>
+<div class="d o"></div>
+<style>
+  body {
+    background: #E6D9AC;
+    padding-top: 52px;
+    padding-left: 117px;
+    display: grid;
+    grid-template-columns: 30px 91px 30px;
+    grid-template-rows: repeat(6, 30px);
+  }
+  .o {
+    background: #BD6C27;
+  }
+  .a {
+    grid-area: 1 / 1 / 6 / 3;
+  }
+  #b {
+    grid-area: 2 / 2 / 7 / 4;
+    background: #8F2D2B;
+  }
+  .c {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .d {
+    grid-area: 5 / 2 / 6 / 3;
+  }
+</style>
+```
