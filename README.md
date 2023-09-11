@@ -134,6 +134,8 @@ This challenge provides an obvious use for CSS grid. It also provides an example
 
 This is an interesting example of abstraction - where the border `color` is abstracted into a class with just the `color` property, which allows the `border-left`, etc. properties to be reused in utility classes. The `width` and `height` are also being reused in utility classes, but that is more straightforward. Also worthwhile mentioning is that one can save characters by making the grid on the `body` take up the whole space, rather than using padding to center, or using a grid to center a `div` and then work within that container with its own internal grid, or some other method using flexbox or other. I wonder whether CSS sin/cos/etc. trigonometry could be used here to make shapes around a central point?
 
+<img alt="" src="">
+
 ```css
 <div class="item-b width-height purple left-border top-border"></div>
 <div class="item-c width-height purple right-border bottom-border"></div>
