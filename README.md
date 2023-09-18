@@ -189,3 +189,53 @@ This is an interesting example of abstraction - where the border `color` is abst
   } 
 </style>
 ```
+
+
+## Daily Target for 18/9/2023
+
+The solutions below for this target are interesting for a few reasons. Firstly, even though both of the solutions below match exactly, they didn't scoore 100%. Not sure why. Secondly, the first example is a good example of how clip-paths can be used to save all the grid work. Also, this is an example of gradient 'stops' in use. The CSS Tricks article [HERE](https://css-tricks.com/books/greatest-css-tricks/hard-stop-gradients/) has great examples for how gradients can be used for backgrounds and pretty effects. The clip-path here I created using [this tool here](https://unused-css.com/tools/clip-path-generator). This is a good tool, because you can edit the points.
+
+
+
+```css
+<div></div>
+<style>
+  body {
+    background: #9076D8;
+    margin: 0;
+  }
+div {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0px 0px, 100px 0px, 100px 100px, 400px 100px, 400px 300px, 300px 300px, 300px 200px, 0px 200px);
+  background-image: linear-gradient(
+    to right,
+    #802471 100px,
+    #4F0843 300px
+  );
+}  
+</style>
+
+<div id=a></div>
+<div id=b></div>
+<div id=c><style>
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100px 200px 100px;
+    grid-template-rows: repeat(3, 100px);
+    background: #9076D8;
+  }
+  #a {
+    grid-area: 1 / 1 / 3 / 2;
+    background: #802471;
+  }
+  #b {
+    grid-area: 2 / 3 / 4 / 4;
+    background: #4F0843;
+  }
+  #c {
+    grid-area: 2 / 2 / 3 / 3;
+    background: linear-gradient(to right, #802471, #4F0843)
+  }
+```
