@@ -195,7 +195,7 @@ This is an interesting example of abstraction - where the border `color` is abst
 
 The solutions below for this target are interesting for a few reasons. Firstly, even though both of the solutions below match exactly, they didn't scoore 100%. Not sure why. Secondly, the first example is a good example of how clip-paths can be used to save all the grid work. Also, this is an example of gradient 'stops' in use. The CSS Tricks article [HERE](https://css-tricks.com/books/greatest-css-tricks/hard-stop-gradients/) has great examples for how gradients can be used for backgrounds and pretty effects. The clip-path here I created using [this tool here](https://unused-css.com/tools/clip-path-generator). This is a good tool, because you can edit the points.
 
-
+<img alt="daily target screenshot for 18/9/2023" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-daily-target-for-2023-09-18.png">
 
 ```css
 <div></div>
