@@ -4,6 +4,11 @@
 
 This daily target is interesting for a few reasons, such as the following:
 
+- This is an example of the use of attribute selectors (albeit silly, made up ones designed to be short). These open up new vistas for handling selection in various senarios. (It should be noted here that [the Spec seems to suggest here](https://html.spec.whatwg.org/#embedding-custom-non-visible-data-with-the-data-*-attributes) that custom attributes should be named `data-` something.)
+- This is an example of where `grid` could have been used (or some other form of positioning, such as `position: absolute`) but where `flexbox` can also be used.
+- I just discovered that sibling tags don't need to be closed (apparently). This would be one way to reduce character counts for CSS battles.
+- Obviously, this is not the way that CSS would/should be written in real-world contexts. So, is CSS battle just a way to learn bad habbits, or a way to practise and extend one's CSS knowledge? Kevin Powell says that it's a good thing to do. So, that's good enough for me. I also like to work on the same problem as others and then see how they'd solve it, so as to learn new methods and approaches.  
+
 <img alt="daily target screenshot for 27/9/2023" src="./illustrative-screenshot-of-daily-target-for-2023-09-27.png">
 
 ```css
