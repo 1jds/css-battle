@@ -211,7 +211,7 @@ Points of note:
 - using `display: grid; place-content: center;` is an easy way to center content.
 - Of course, one could also use `display: flex; justify-content: center; align-items: center;`.
 
-<img alt="screenshot of daily target image" src="./screenshot-of-daily-target-for-2023-09-01.png">
+<img alt="screenshot of daily target image" src="./illustrative-screenshot-of-daily-target-for-2023-09-01.png">
 
   ```html
   <div id="a"></div>
