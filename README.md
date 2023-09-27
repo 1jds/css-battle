@@ -1,140 +1,106 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
-## Daily Target for 01/09/2023
+## Daily Target for 27/9/2023
 
-In order to complete this challenge, it would, of course, be possible to use absolute positioning. However, it's more pleasing to use CSS Grid to both center within the container (here the `body`) and overlap the grid children. The children are able to be overlapped by assigning them to the same grid area. The `place-self: center` centers every child within grid-area 'a'.
+This daily target is interesting for a few reasons, such as the following:
 
-Points of note: 
-- assigning two elements to the same grid area overlaps them. This is explained further by Kevin Powell [in this video](https://youtube.com/shorts/ncPwkE10BOY?si=JS22WK8FBvLfHafo).
-- using `display: grid; place-content: center;` is an easy way to center content.
-- Of course, one could also use `display: flex; justify-content: center; align-items: center;`.
+<img alt="daily target screenshot for 27/9/2023" src="./illustrative-screenshot-of-daily-target-for-2023-09-27.png">
 
-<img alt="screenshot of daily target image" src="https://github.com/1jds/css-battle/blob/main/screenshot-of-daily-target-for-2023-09-01.png">
+```css
+<p a x>
+<p b x y>
+<p y>
+<p d x>
+<p y>
+<p f x y>
+<p g x>
 
-  ```html
-  <div id="a"></div>
-  <div class="l"></div>
-  <div class="l b"></div>
-  <div class="l c"></div>
-    
-  <style>
-    body {
-      background: #66284A;
-      display: grid;
-      justify-content: center;
-      align-content: center;
-      grid-template-areas: "a"
-    }
-    div {
-        background: #F0CD48;
-        place-self: center;
-        grid-area: a;
-      }
-    #a {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-    }
-    .l {
-        width: 40px;
-        height: 240px;
-        border-radius: 20px  
-    }
-    .b {
-        transform: rotate(60deg)
-    }
-    .c {
-        transform: rotate(-60deg)
-    }
+<style>
+  * {
+    margin: 0
+  }
+  body {
+    background: #8D1C24;
+    display: flex;
+    align-items: center
+  }
+  [a], [g] {
+    width: 90;
+    height: 40
+  }
+  [d] {
+    width: 60;
+    height: 60;
+    border-radius: 50%
+  }
+  [b], [f] {
+    align-self: stretch
+  }
+  [x] {
+    background: #EC9140
+  }
+  [y] {
+    width: 40
+  }
 </style>
-  
-  ```
+```
 
-## Challenge No. 121. Duck Hunt
 
-This challenge can be solved using a combination of `linear-gradient`, `box-shadow`, and absolute positioning. The background of course, could be made with flexbox, or grid, or just block-level components. But the linear-gradient solution saves characters. Also, ordering the `<div>` elements in the HTML as they are removes the need to use `z-index` to layer the tree trunk under the leaves. An 'optimised' (but unreadable) version of the same which saves characters is added below.
+## Daily Target for 18/9/2023
 
-<img alt="screenshot of my css battle number 121 answer" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-css-battle-121-duck-hunt.png">
+The solutions below for this target are interesting for a few reasons. Firstly, even though both of the solutions below match exactly, they didn't scoore 100%. Not sure why. Secondly, the first example is a good example of how clip-paths can be used to save all the grid work. Also, this is an example of gradient 'stops' in use. The CSS Tricks article [HERE](https://css-tricks.com/books/greatest-css-tricks/hard-stop-gradients/) has great examples for how gradients can be used for backgrounds and pretty effects. The clip-path here I created using [this tool here](https://unused-css.com/tools/clip-path-generator). This is a good tool, because you can edit the points.
 
-Normal: 
-```html
-<div id="tree"></div>
-<div id="foliage"></div>
+<img alt="daily target screenshot for 18/9/2023" src="./illustrative-screenshot-of-daily-target-for-2023-09-18.png">
+
+```css
+<div></div>
 <style>
   body {
-    background: linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%);
+    background: #9076D8;
+    margin: 0;
   }
-  #foliage {
-    position: absolute;
-    left: 40;
-    top: 60;
-    width: 40px;
-    height: 40px;
-    background: #69D10A;
-    border-radius: 50%;
-    color: #69D10A;
-    box-shadow: 20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px;
-  }
-  #tree {
-    position: absolute;
-    left: 50px;
-    top: 80px;
-    background: #441A0A;
-    height: 100px;
-    width: 20px;
-  }
+div {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0px 0px, 100px 0px, 100px 100px, 400px 100px, 400px 300px, 300px 300px, 300px 200px, 0px 200px);
+  background-image: linear-gradient(
+    to right,
+    #802471 100px,
+    #4F0843 300px
+  );
+}  
 </style>
-```
 
-'Character optimised`:
-```html
-<div id="t"></div><div id="f"><style>body{background:linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%)}#f{position:absolute;left:40;top:60;width:40;height:40;background: #69D10A;border-radius:50%;color:#69D10A;box-shadow:20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px}#t{position:absolute;left:50;top:80;background:#441A0A;height:100;width:20}
-```
-
-## Daily Target for 9/9/2023
-
-This challenge provides an obvious use for CSS grid. It also provides an example of how color declarations should mostly be abstracted to utility classes or CSS custom properties.
-
-<img alt="illustrative screenshot of daily target for 9/9/2023" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-daily-target-for-2023-09-10.png">
-
-```html
-<div class="a o"></div>
+<div id=a></div>
 <div id=b></div>
-<div class="c o"></div>
-<div class="d o"></div>
-<style>
+<div id=c><style>
   body {
-    background: #E6D9AC;
-    padding-top: 52px;
-    padding-left: 117px;
+    margin: 0;
     display: grid;
-    grid-template-columns: 30px 91px 30px;
-    grid-template-rows: repeat(6, 30px);
+    grid-template-columns: 100px 200px 100px;
+    grid-template-rows: repeat(3, 100px);
+    background: #9076D8;
   }
-  .o {
-    background: #BD6C27;
-  }
-  .a {
-    grid-area: 1 / 1 / 6 / 3;
+  #a {
+    grid-area: 1 / 1 / 3 / 2;
+    background: #802471;
   }
   #b {
-    grid-area: 2 / 2 / 7 / 4;
-    background: #8F2D2B;
+    grid-area: 2 / 3 / 4 / 4;
+    background: #4F0843;
   }
-  .c {
-    grid-area: 3 / 2 / 4 / 3;
+  #c {
+    grid-area: 2 / 2 / 3 / 3;
+    background: linear-gradient(to right, #802471, #4F0843)
   }
-  .d {
-    grid-area: 5 / 2 / 6 / 3;
-  }
-</style>
 ```
+
 
 ## Daily Target for 11/9/2023
 
 This is an interesting example of abstraction - where the border `color` is abstracted into a class with just the `color` property, which allows the `border-left`, etc. properties to be reused in utility classes. The `width` and `height` are also being reused in utility classes, but that is more straightforward. Also worthwhile mentioning is that one can save characters by making the grid on the `body` take up the whole space, rather than using padding to center, or using a grid to center a `div` and then work within that container with its own internal grid, or some other method using flexbox or other. I wonder whether CSS sin/cos/etc. trigonometry could be used here to make shapes around a central point?
 
-<img alt="illustrative-screenshot-for-daily-target-11-9-23" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-daily-target-for-2023-09-11.png">
+<img alt="illustrative-screenshot-for-daily-target-11-9-23" src="./illustrative-screenshot-of-daily-target-for-2023-09-11.png">
 
 ```css
 <div class="item-b width-height purple left-border top-border"></div>
@@ -191,51 +157,134 @@ This is an interesting example of abstraction - where the border `color` is abst
 ```
 
 
-## Daily Target for 18/9/2023
+## Daily Target for 9/9/2023
 
-The solutions below for this target are interesting for a few reasons. Firstly, even though both of the solutions below match exactly, they didn't scoore 100%. Not sure why. Secondly, the first example is a good example of how clip-paths can be used to save all the grid work. Also, this is an example of gradient 'stops' in use. The CSS Tricks article [HERE](https://css-tricks.com/books/greatest-css-tricks/hard-stop-gradients/) has great examples for how gradients can be used for backgrounds and pretty effects. The clip-path here I created using [this tool here](https://unused-css.com/tools/clip-path-generator). This is a good tool, because you can edit the points.
+This challenge provides an obvious use for CSS grid. It also provides an example of how color declarations should mostly be abstracted to utility classes or CSS custom properties.
 
-<img alt="daily target screenshot for 18/9/2023" src="https://github.com/1jds/css-battle/blob/main/illustrative-screenshot-of-daily-target-for-2023-09-18.png">
+<img alt="illustrative screenshot of daily target for 9/9/2023" src="./illustrative-screenshot-of-daily-target-for-2023-09-10.png">
 
-```css
-<div></div>
+```html
+<div class="a o"></div>
+<div id=b></div>
+<div class="c o"></div>
+<div class="d o"></div>
 <style>
   body {
-    background: #9076D8;
-    margin: 0;
-  }
-div {
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(0px 0px, 100px 0px, 100px 100px, 400px 100px, 400px 300px, 300px 300px, 300px 200px, 0px 200px);
-  background-image: linear-gradient(
-    to right,
-    #802471 100px,
-    #4F0843 300px
-  );
-}  
-</style>
-
-<div id=a></div>
-<div id=b></div>
-<div id=c><style>
-  body {
-    margin: 0;
+    background: #E6D9AC;
+    padding-top: 52px;
+    padding-left: 117px;
     display: grid;
-    grid-template-columns: 100px 200px 100px;
-    grid-template-rows: repeat(3, 100px);
-    background: #9076D8;
+    grid-template-columns: 30px 91px 30px;
+    grid-template-rows: repeat(6, 30px);
   }
-  #a {
-    grid-area: 1 / 1 / 3 / 2;
-    background: #802471;
+  .o {
+    background: #BD6C27;
+  }
+  .a {
+    grid-area: 1 / 1 / 6 / 3;
   }
   #b {
-    grid-area: 2 / 3 / 4 / 4;
-    background: #4F0843;
+    grid-area: 2 / 2 / 7 / 4;
+    background: #8F2D2B;
   }
-  #c {
-    grid-area: 2 / 2 / 3 / 3;
-    background: linear-gradient(to right, #802471, #4F0843)
+  .c {
+    grid-area: 3 / 2 / 4 / 3;
   }
+  .d {
+    grid-area: 5 / 2 / 6 / 3;
+  }
+</style>
 ```
+
+
+## Daily Target for 01/09/2023
+
+In order to complete this challenge, it would, of course, be possible to use absolute positioning. However, it's more pleasing to use CSS Grid to both center within the container (here the `body`) and overlap the grid children. The children are able to be overlapped by assigning them to the same grid area. The `place-self: center` centers every child within grid-area 'a'.
+
+Points of note: 
+- assigning two elements to the same grid area overlaps them. This is explained further by Kevin Powell [in this video](https://youtube.com/shorts/ncPwkE10BOY?si=JS22WK8FBvLfHafo).
+- using `display: grid; place-content: center;` is an easy way to center content.
+- Of course, one could also use `display: flex; justify-content: center; align-items: center;`.
+
+<img alt="screenshot of daily target image" src="./screenshot-of-daily-target-for-2023-09-01.png">
+
+  ```html
+  <div id="a"></div>
+  <div class="l"></div>
+  <div class="l b"></div>
+  <div class="l c"></div>
+    
+  <style>
+    body {
+      background: #66284A;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-areas: "a"
+    }
+    div {
+        background: #F0CD48;
+        place-self: center;
+        grid-area: a;
+      }
+    #a {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+    .l {
+        width: 40px;
+        height: 240px;
+        border-radius: 20px  
+    }
+    .b {
+        transform: rotate(60deg)
+    }
+    .c {
+        transform: rotate(-60deg)
+    }
+</style>
+  
+  ```
+
+## Challenge No. 121. Duck Hunt
+
+This challenge can be solved using a combination of `linear-gradient`, `box-shadow`, and absolute positioning. The background of course, could be made with flexbox, or grid, or just block-level components. But the linear-gradient solution saves characters. Also, ordering the `<div>` elements in the HTML as they are removes the need to use `z-index` to layer the tree trunk under the leaves. An 'optimised' (but unreadable) version of the same which saves characters is added below.
+
+<img alt="screenshot of my css battle number 121 answer" src="./illustrative-screenshot-of-css-battle-121-duck-hunt.png">
+
+Normal: 
+```html
+<div id="tree"></div>
+<div id="foliage"></div>
+<style>
+  body {
+    background: linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%);
+  }
+  #foliage {
+    position: absolute;
+    left: 40;
+    top: 60;
+    width: 40px;
+    height: 40px;
+    background: #69D10A;
+    border-radius: 50%;
+    color: #69D10A;
+    box-shadow: 20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px;
+  }
+  #tree {
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    background: #441A0A;
+    height: 100px;
+    width: 20px;
+  }
+</style>
+```
+
+'Character optimised`:
+```html
+<div id="t"></div><div id="f"><style>body{background:linear-gradient(#1E92FF, #1E92FF 60%, #69D10A 60%, #69D10A 73.3%, #6F6100 73.3%)}#f{position:absolute;left:40;top:60;width:40;height:40;background: #69D10A;border-radius:50%;color:#69D10A;box-shadow:20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px}#t{position:absolute;left:50;top:80;background:#441A0A;height:100;width:20}
+```
+
