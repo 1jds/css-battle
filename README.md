@@ -1,5 +1,17 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge No. 6: Missing Slice
+
+<img alt="daily target screenshot for 27/9/2023" src="./illustrative-screenshot-of-css-battle-6-missing-slice.png">
+
+In order to complete this target, I initially thought about using flex-box to make four squares of colour in the middle, and then using `border-radius` to round the corners off into a circle shape.
+
+Once that was completed, however, it struck me that the cirlce looked like a `conic-gradient` with hard colour stops. So, I changed the code to the following.
+
+Finally, however, I found out that there is a way to eliminate the repetition of color declarations as in this example. This is really helpful to know, and is the reason why I've recorded this answer. This is a great tid-bit to remember for when dealing with gradient stops.
+
+
+
 ## Daily Target for 27/9/2023
 
 This daily target is interesting for a few reasons, such as the following:
@@ -252,7 +264,7 @@ Points of note:
   
   ```
 
-## Challenge No. 121. Duck Hunt
+## Challenge No. 121: Duck Hunt
 
 This challenge can be solved using a combination of `linear-gradient`, `box-shadow`, and absolute positioning. The background of course, could be made with flexbox, or grid, or just block-level components. But the linear-gradient solution saves characters. Also, ordering the `<div>` elements in the HTML as they are removes the need to use `z-index` to layer the tree trunk under the leaves. An 'optimised' (but unreadable) version of the same which saves characters is added below.
 
