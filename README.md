@@ -1,5 +1,80 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Daily Target for 4/10/2023
+
+<img alt="daily target screenshot for 27/9/2023" src="./images/illustrative-screenshot-of-daily-target-for-2023-10-4.png">
+
+I got stuck for a bit on this daily target the first time I tried it, because I was wanting to use `z-index` but it wasn't working. The reason, as I discovered, is that the elements I was trying to stack were not in the same 'stacking context'. The fix was to add `position: relative` on the elements I was trying to put something behind, because that something had `position: absolute` on it. Figured this out by looking at [this helpful article](https://coder-coder.com/z-index-isnt-working/).
+
+<img alt="daily target screenshot for 27/9/2023" src="./images/not-working-z-index.png" width="75%">
+
+I was trying to put the yellow box behind the aqua column. I first tried this code:
+```html
+<p c>
+<p a>
+<p b>
+<style>
+  *{margin:0 auto; background:#DA30D4}
+  body{
+    padding-top: 90px;
+  }
+  [a] {
+    width: 120px;
+    height: 120px;
+    border-radius:50%;
+    outline: 40px solid #0C0C49;
+    z-index: 1
+  }
+  [b]{
+    height: 90px;
+    width: 40px;
+    background: aqua;
+    z-index: 3
+  }
+  [c]{
+    height: 150px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+    background: yellow;
+    z-index: 2
+  }
+</style>
+```
+But I needed to add a position to the `[a]` and `[b]` elements. This code worked:
+
+```html
+<p a>
+<p c>
+<p b>
+<style>
+  *{margin:0 auto; background:#DA30D4; position: relative}
+  body{
+    padding-top: 90px;
+  }
+  [a] {
+    width: 120px;
+    height: 120px;
+    border-radius:50%;
+    outline: 40px solid #0C0C49;
+  }
+  [b]{
+    height: 90px;
+    width: 40px;
+    background: #0C0C49;
+  }
+  [c]{
+    height: 150px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+    background: yellow;
+  }
+</style>
+```
+
+<img alt="daily target screenshot for 27/9/2023" src="./images/working-z-index.png" width="75%">
+
 ## Challenge No. 6 - Missing Slice
 
 <img alt="daily target screenshot for 27/9/2023" src="./images/illustrative-screenshot-of-css-battle-6-missing-slice.png">
