@@ -1,5 +1,46 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge No. 27 - Lockup
+
+This challenge can make use of the `aspect-ratio` CSS property, which allows the elements to have only a `width` or a `height` set. Kevin Powell discusses how this can be helpful in allowing the developer to only have to change one value when making alterations to a design.
+
+<img alt="screenshot of my css battle number 27 lock up" src="./images/illustrative-screenshot-of-css-battle-27-lock-up.png">
+
+
+```html
+<p a>
+<p b>
+<p c>
+<style>
+body {
+  background: #E38F66;
+  display: grid;
+  place-content: center;
+}
+  p {
+    grid-area: a;
+    place-self: center;
+    background: #AA445F;
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+  [a] {
+    width: 200;
+  }
+  [b] {
+    width: 140;
+    background: conic-gradient(
+      #F7EC7D 25%,
+      #AA445F 0 50%,
+      #F7EC7D 0 75%,
+      #AA445F 0
+    )
+  }
+  [c] {
+    width: 80;
+  }
+```
+
 ## Daily Target for 4/10/2023
 
 <img alt="daily target screenshot for 27/9/2023" src="./images/illustrative-screenshot-of-daily-target-for-2023-10-4.png">
