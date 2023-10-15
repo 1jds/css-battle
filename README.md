@@ -1,11 +1,64 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge No. 42 - Baby
+
+<img alt="screenshot of my css battle number 42 baby" src="./images/illustrative-screenshot-of-css-battle-42-baby.png" width="50%">
+
+This challenge is straightforward, except for the baby's hair. Initially, I though that this would be a `border-radius: 0 100%` to create a kind of almond shape that could be rotated into position. however, it's not quite symmetical that way. Instead, I used radial-gradients, as in the code below.
+
+Stacking the gradients on top of each other only works (visually) if there is transparency on one.
+
+Also interesting to note is that `#0000` gives a transparent background.
+
+```html
+<p a x>
+<p b x y>
+<p c y>
+<style>
+  body{
+    background:#293462;
+    margin:50 100
+  }
+  [a]{
+    width:200;
+    background:#FE5F55;
+    border-radius:106q 106q 53q 53q;
+    background:radial-gradient(
+      circle at 75% 0%,
+      #FFF1C1 53q,
+      #0000 0
+    ), radial-gradient(
+      circle at 25% 0%,
+      #FFF1C1 53q,
+      #FE5F55 0
+    )
+  }
+  [x]{aspect-ratio:1}
+  [y]{
+  background:#FFF1C1;
+  position:absolute;
+  }
+[b]{
+  top:124;
+  left:120;
+  width:60;
+  border-radius:50%;
+  box-shadow:106q 0 #FFF1C1
+}
+  [c]{
+  top:204;
+  left:180;
+  width:40;
+  height:10;
+  border-radius:25q
+  }
+```
+
 ## Challenge No. 27 - Lockup
 
 This challenge can make use of the `aspect-ratio` CSS property, which allows the elements to have only a `width` or a `height` set. Kevin Powell discusses how this can be helpful in allowing the developer to only have to change one value when making alterations to a design.
 
 <img alt="screenshot of my css battle number 27 lock up" src="./images/illustrative-screenshot-of-css-battle-27-lock-up.png">
-
 
 ```html
 <p a>
@@ -50,68 +103,79 @@ I got stuck for a bit on this daily target the first time I tried it, because I 
 <img alt="daily target screenshot for 27/9/2023" src="./images/not-working-z-index.png" width="75%">
 
 I was trying to put the yellow box behind the aqua column. I first tried this code:
+
 ```html
-<p c>
-<p a>
+<p c></p>
+<p a></p>
 <p b>
-<style>
-  *{margin:0 auto; background:#DA30D4}
-  body{
-    padding-top: 90px;
-  }
-  [a] {
-    width: 120px;
-    height: 120px;
-    border-radius:50%;
-    outline: 40px solid #0C0C49;
-    z-index: 1
-  }
-  [b]{
-    height: 90px;
-    width: 40px;
-    background: aqua;
-    z-index: 3
-  }
-  [c]{
-    height: 150px;
-    width: 200px;
-    position:absolute;
-    bottom:0;
-    background: yellow;
-    z-index: 2
-  }
-</style>
+  <style>
+    * {
+      margin: 0 auto;
+      background: #da30d4;
+    }
+    body {
+      padding-top: 90px;
+    }
+    [a] {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      outline: 40px solid #0c0c49;
+      z-index: 1;
+    }
+    [b] {
+      height: 90px;
+      width: 40px;
+      background: aqua;
+      z-index: 3;
+    }
+    [c] {
+      height: 150px;
+      width: 200px;
+      position: absolute;
+      bottom: 0;
+      background: yellow;
+      z-index: 2;
+    }
+  </style>
+</p>
 ```
+
 But I needed to add a position to the `[a]` and `[b]` elements. This code worked:
 
 ```html
-<p a>
-<p c>
+<p a></p>
+<p c></p>
 <p b>
-<style>
-  *{margin:0 auto; background:#DA30D4; position: relative}
-  body{
-    padding-top: 90px;
-  }
-  [a] {
-    width: 120px;
-    height: 120px;
-    border-radius:50%;
-    outline: 40px solid #0C0C49;
-  }
-  [b]{
-    height: 90px;
-    width: 40px;
-    background: #0C0C49;
-  }
-  [c]{
-    height: 150px;
-    width: 200px;
-    position:absolute;
-    bottom:0;
-    background: yellow;
-  }
-</style>
+  <style>
+    * {
+      margin: 0 auto;
+      background: #da30d4;
+      position: relative;
+    }
+    body {
+      padding-top: 90px;
+    }
+    [a] {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      outline: 40px solid #0c0c49;
+    }
+    [b] {
+      height: 90px;
+      width: 40px;
+      background: #0c0c49;
+    }
+    [c] {
+      height: 150px;
+      width: 200px;
+      position: absolute;
+      bottom: 0;
+      background: yellow;
+    }
+  </style>
+</p>
 ```
 
 <img alt="daily target screenshot for 27/9/2023" src="./images/working-z-index.png" width="75%">
