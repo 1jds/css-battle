@@ -2,9 +2,9 @@
 
 ## Challenge No. 42 - Baby
 
-<img alt="screenshot of my css battle number 42 baby" src="./images/illustrative-screenshot-of-css-battle-42-baby.png" width="50%">
+<img alt="screenshot of my css battle number 42 baby" src="./images/illustrative-screenshot-of-css-battle-42-baby.PNG" width="50%">
 
-This challenge is straightforward, except for the baby's hair. Initially, I though that this would be a `border-radius: 0 100%` to create a kind of almond shape that could be rotated into position. however, it's not quite symmetical that way. Instead, I used radial-gradients, as in the code below.
+This challenge is straightforward, except for the baby's hair. Initially, I though that this would be a `border-radius: 0 100%` to create a kind of almond shape that could be rotated into position. However, it's not quite symmetrical that way. Instead, I used radial-gradients, as in the code below.
 
 Stacking the gradients on top of each other only works (visually) if there is transparency on one.
 
@@ -539,7 +539,12 @@ Normal:
     background: #69d10a;
     border-radius: 50%;
     color: #69d10a;
-    box-shadow: 20px 20px, -20px 20px, 0px 20px, 270px 70px, 270px 90px;
+    box-shadow:
+      20px 20px,
+      -20px 20px,
+      0px 20px,
+      270px 70px,
+      270px 90px;
   }
   #tree {
     position: absolute;
