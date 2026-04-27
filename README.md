@@ -1,5 +1,28 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge No. 255 - Crossroads
+
+This one was not particularly difficult, but it was challenging to get the character count down! There are numerous ways that this could be solved, but many of them would require multiplying elements and style rules. I'm sure that there is a more concise solution than this one, but it was reasonably good.
+
+The interesting point here is the use of the `--a` custom property. I have used custom properties before, but usually for only for the replacement of single values (e.g. colors). I think I realised today for the first time that more than one property (e.g. the whole short-hand for a border) can be declared together and saved in the variable.
+
+This is interesting, if you think about it, because it means that instead of applying utility classes, one could apply utility custom properties in some places.
+
+```html
+<p a><p a b><p a c><p a b c><p d><p d e><div z><style>*{position:absolute;aspect-ratio:1}body,p{background:#469DBA}[a]{--a:20px solid #F5E3B5;width:70px;border:var(--a);outline-offset:10px;outline:var(--a);left:42;top:-24}[b]{top:166}[c]{left:232}[d]{width:50px;top:66;left:132}[e]{left:202;top:136}[z]{width:260px;border:60px solid #469DBA;top:-48;left:2
+```
+
+
+## Challenge No. 254 - Unfitting 
+
+Haven't done one of these in a while. Fun to use some radial-gradients, and `q` units (quarter-millimeter).
+
+Score of 643, with 234 chars.
+
+```html
+<p a><p b><style>*{background:#2F434E;width:260}body{padding:22 62}[a]{height:140;background:radial-gradient(circle at bottom,#0000 95q,#F8B140 0)}[b]{height:80;background:radial-gradient(circle at top,#0000 53q,#CF6939 0);margin:20 0
+```
+
 ## Challenge No. 42 - Baby
 
 <img alt="screenshot of my css battle number 42 baby" src="./images/illustrative-screenshot-of-css-battle-42-baby.PNG" width="50%">
