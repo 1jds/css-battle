@@ -1,5 +1,13 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge No. 256 - 256th
+
+Like the last one, this challenge is not hard, but it is hard to get a short char count for it. I wasn't happy with 393 characters, but at least it was in the 300s :)
+
+```html
+<p a><p a b><p c><p c d><p c e><p f><p f g><style>*{background:#4C455B;position:absolute}p{background:#F5E3B5;height:40}[a]{width:40;top:166;left:72}[b]{height:80;top:46;left:272}[c]{width:160;top:6;left:112}[d]{top:126}[e]{top:206}[f]{top:56;left:132;width:60;height:60;background:radial-gradient(#0000 10px,#0000 0,#8AB8B6 0);border-radius:50% 50% 0%;rotate:315deg}[g]{rotate:135deg;left:192
+```
+
 ## Challenge No. 255 - Crossroads
 
 This one was not particularly difficult, but it was challenging to get the character count down! There are numerous ways that this could be solved, but many of them would require multiplying elements and style rules. I'm sure that there is a more concise solution than this one, but it was reasonably good.
