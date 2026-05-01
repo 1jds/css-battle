@@ -1,5 +1,46 @@
 # Repo For Some of my Solutions to CSS Battle Challenges and Notes on These
 
+## Challenge NO. 261 - Road Sign
+
+This one was fun. Not just because it came in at under 300 characters (276), but also for a trick I thought up that I'd never thought of using before: *viz.* using the combination of a `border-radius` and a `clip-path`. This saves having to make the rounded part of the sign a different element from the pointy part. Not sure when that would be useful, but fun to have thought it up :)
+
+```html
+<p a><p b><p b c><style>*{background:#2D3464;position:absolute}[a]{top:6;left:172;width:40;height:240;background:#48BF7D}[b]{top:26;left:92;width:200;height:60;background:#ECDFEA;border-radius:20px;clip-path:polygon(0 0,80% 0,100% 50%,80% 100%,0 100%)}[c]{rotate:180deg;top:96
+```
+
+## Challenge No. 260 - Divide
+
+304 characters is pretty good, but I'm sure I could work on this and get it under 300!
+
+```html
+<p a><p a b><p c><p c d><p c e><p c e f><p a c g><style>*{margin:0;background:#B95A56;position:absolute}[a]{background:#fff;width:120;height:100;left:140;top:20}[b]{top:180}[c]{left:160;height:20;width:100;top:40}[d]{top:200}[e]{top:80;left:140}[f]{top:240}[g]{width:140;top:140;left:130;border-radius:9q
+```
+
+## Challenge No. 259 - Rhythm
+
+Pains-takingly changed all the `px` units to `q` units, to achieve the same visual diff effect, but only score 99.9%!
+
+```html
+<p a><p b><style>*{margin:0;background:#50EEB4;position:absolute}[a]{width:352;height:260;left:34;top:20;background:repeating-linear-gradient(90deg,#fff 0,#fff 22px,#0000 24px,#0000 44px)}[b]{background:#0B7B52;width:24;height:24;top:36;left:34;color:#0B7B52;box-shadow:44px 34px,88px 68px,132px 102px,176px 102px,308px 0,264px 34px,220px 68px,220px 136px,264px 170px,308px 204px,0 204px,44px 170px,88px 136px
+```
+
+
+## Challenge No. 258 - Phase
+
+I look at this, and I see grid as a solution straight away (with overlapping elements occupying shared grid-areas). Possibly could get under 400 characters with another approach, but was good to practice using `grid-template` as an all-in-one.
+
+```html
+<div a><p b c><p b d><p h f z><p h g z><p b e z></div><style>*{margin:0}body{background:#CF6939;padding:25 100}[a]{display:grid;grid-template:"a b b" 60px"e e e" 130px"f f g" 60px/70px 60px 70px}[b]{background:#2A272F}[c]{grid-area:b}[d]{grid-area:f}[z]{grid-area:e}[e]{width:60px;justify-self:center}[h]{background:#fff;width:130;height:130;border-radius:0%0%99%}[f]{border-radius:99%0%0%}[g]{justify-self:end
+```
+
+## Challenge No. 257 - Cluster
+
+This was nice to be able to get a sub-300 character count (274!)
+
+```html
+<p a><p b><style>*{position:absolute;background:#FDFFE9;aspect-ratio:1}[a]{background:#2D3464;color:#2D3464;width:65;top:21;left:127;box-shadow:105px 0,-40px 40px,-40px 145px,65px 145px,0 105px,105px 105px,65px 40px}[b]{background:#D95362;width:90;left:145;top:80;z-index:-1
+```
+
 ## Challenge No. 256 - 256th
 
 Like the last one, this challenge is not hard, but it is hard to get a short char count for it. I wasn't happy with 393 characters, but at least it was in the 300s :)
